@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math-package/mathlib"
 )
 
 // function for add
@@ -39,4 +40,9 @@ func main() {
 	// call second value return function
 	add, mul := twoValueReturn(5, 10)
 	fmt.Println("return two value sum value and multiple of value", add, mul)
+
+	// call package function
+	result := mathlib.Add(5, 10)
+
+	fmt.Println("package function call result", result)
 }
