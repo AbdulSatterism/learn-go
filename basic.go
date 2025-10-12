@@ -44,5 +44,12 @@ func main() {
 	// call package function
 	result := mathlib.Add(5, 10)
 
+	// IIFE Immediately Invoked Function Expression
+	func() {
+		a := 10
+		b := 20
+		fmt.Println("a + b", a+b)
+	}()
+
 	fmt.Println("package function call result", result)
 }
