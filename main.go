@@ -1,8 +1,48 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
+
+// closure learn program
+
+const a = 100
+
+var p = 10
+
+func outer() func() {
+	money := 100
+
+	age := 18
+
+	fmt.Println("I am over ", age)
+
+	show := func() {
+		money = money + a + p
+
+		fmt.Println(money)
+	}
+
+	return show
+}
+
+func call() {
+	show1 := outer()
+
+	show1()
+	show1()
+
+	show2 := outer()
+	show2()
+}
+
+func main() {
+	call()
+}
+
+func init() {
+	fmt.Println("===> Bank Account <===")
+}
+
+/*
 
 // custome package function
 // import (
@@ -89,3 +129,6 @@ func main() {
 	res(1, 2)
 
 }
+
+
+*/
