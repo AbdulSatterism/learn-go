@@ -2,6 +2,50 @@ package main
 
 import "fmt"
 
+// learn struct and receiver function
+
+type TUser struct {
+	Name string
+	Age  int
+}
+
+// normal function
+func personDetails(user TUser) {
+	fmt.Println("Name: ", user.Name, "Age: ", user.Age)
+}
+
+// receiver function
+
+func (user TUser) person() {
+	fmt.Println("Name: ", user.Name, "Age: ", user.Age)
+}
+
+func main() {
+
+	user1 := TUser{
+		Name: "Mr. Kodu",
+		Age:  30,
+	}
+
+	// call receiver function
+	user1.person()
+
+	// personDetails(user1)
+
+	// user2 := TUser{
+	// 	Name: "Mr. Jodu",
+	// 	Age:  25,
+	// }
+
+	// personDetails(user2)
+
+	// fmt.Println("Name: ", user1.Name, "Age: ", user1.Age)
+	// fmt.Println("Name: ", user2.Name, "Age: ", user2.Age)
+
+}
+
+/*
+
 // closure learn program
 
 const a = 100
