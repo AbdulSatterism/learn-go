@@ -2,6 +2,62 @@ package main
 
 import "fmt"
 
+// learn pointer in go-lang
+
+// call by value
+
+func callByValue(num int) {
+	fmt.Println("value inside function callByValue", num)
+}
+
+// call by reference
+
+func callByReference(ptr *int) {
+	fmt.Println("address inside function callByReference", ptr)
+	fmt.Println("value inside function callByReference", *ptr)
+}
+
+// call by reference different way
+
+// func refArray(arr [5]int) {
+
+// 	fmt.Println("array inside function callByReference", arr)
+
+// }
+
+func refArray(arr *[5]int) {
+
+	fmt.Println("array inside function callByReference", *arr)
+
+}
+
+func main() {
+
+	// num := 50
+
+	// ptr := &num
+
+	// fmt.Println("address of num before pointer", ptr) // address of num
+
+	// fmt.Println("value of num before pointer", *ptr) // dereference value
+
+	// callByValue(num)
+
+	// callByValue(num)
+
+	// call by reference
+
+	// callByReference(&num)
+
+	// call by reference different way
+
+	arr := [5]int{1, 2, 3, 4, 5}
+
+	refArray(&arr)
+
+}
+
+/*
 // learn struct and receiver function
 
 type TUser struct {
